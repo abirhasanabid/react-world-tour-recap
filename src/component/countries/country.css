@@ -1,6 +1,21 @@
-.country{
+.country {
     border: 2px solid gray;
     border-radius: 12px;
     padding: 15px;
     margin-top: 10px;
+}
+
+.country-flag {
+    width: 200px;
+    border-radius: 8px;
+}
+
+.country-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.country-visited{
+    background-color: bisque;
 }

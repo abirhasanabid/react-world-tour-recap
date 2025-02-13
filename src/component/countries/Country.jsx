@@ -1,20 +1,34 @@
+import { useState } from 'react';
 import './country.css'
 import PropTypes from 'prop-types';
 
-const Country = ({ country }) => {
-    console.log(country);
+const Country = ({ country, handleVisitedCountry }) => {
     const { name, flags } = country;
 
+    const [visited, setVisited] = useState(false);
+    
+
+    const handleVisited = () => {
+        setVisited(!visited);
+    }
+
     return (
-        <div className='country'>
+        <div className={`country ${visited && 'country-visited'}`}>
             <h3>Country Name : {name.common}</h3>
-            <img className={{ width: '0px' }} src={flags.png} alt="" />
+            <img className='country-flag' src={flags.png} alt="" />
+
+            <button onClick={() => handleVisitedCountry(country)}>Mark Visited</button>
+            <br />
+
+            <button onClick={handleVisited}>{visited ? 'visited' : 'visit'}</button>
+            {visited ? <p style={{ color: 'green' }}>I have visited this country</p> : <p>I will visited one day inshaallah</p>}
         </div>
     );
 };
 
 Country.propTypes = {
-    country: PropTypes.object
+    country: PropTypes.object,
+    handleVisitedCountry: PropTypes.func
 };
 
 export default Country;
