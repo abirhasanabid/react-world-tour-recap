@@ -24,7 +24,7 @@ const Country = ({ country, handleVisitedCountry, handleFlags }) => {
             <br />
 
             <button onClick={handleVisited}>{visited ? 'visited' : 'visit'}</button>
-            {visited ? <p style={{ color: 'green' }}>I have visited this country</p> : <p>I will visited one day inshaallah</p>}
+            {visited ? <p style={{ color: 'green' }}>I have visited this country</p> : <p style={{color:'red'}}>I will visited one day inshaallah</p>}
         </div>
     );
 };
