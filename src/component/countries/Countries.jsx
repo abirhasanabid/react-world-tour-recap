@@ -31,7 +31,7 @@ const Countries = () => {
         <div className="">
             <h2>Countries : {countries.length}</h2>
             <h3>Visited Country length: {visitedCountry.length}</h3>
-            <h4>Visited Country Name </h4>
+            <h4>Visited Country Name and flag</h4>
             <ul>
                 {
                     visitedCountry.map(visited => <li key={visited.cca2}>{visited?.name?.common}</li>)
